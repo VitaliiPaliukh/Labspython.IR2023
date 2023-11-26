@@ -59,35 +59,6 @@ class WeatherCalendar(Weather):
         self.weather_info.sort(key = self.get_day)
 
 
-if __name__ == "__main__": 
-    weather1 = Weather("2023-11-01", "Lviv", "Ukraine", 14, 91, 10, WeatherType.CLOUDY)
-    weather2 = Weather("2023-11-02", "Lviv", "Ukraine", 14, 89, 5, WeatherType.SUNNY)
-    weather3 = Weather("2023-11-03", "Lviv", "Ukraine", 16, 81, 12, WeatherType.RAINY)
-    weather4 = Weather("2023-11-04", "Lviv", "Ukraine", 9, 92, 9, WeatherType.RAINY)
-
-    calendar = WeatherCalendar()
-    calendar.add_weather_info(weather2)
-    calendar.add_weather_info(weather1)
-    calendar.add_weather_info(weather3)
-    calendar.add_weather_info(weather4)
-
-    print("Weather Records:")
-    for record in calendar.weather_info:
-        print(record)
-
-    calendar.sort_weather_info()
-
-    print("\nWeather Records Sorted by Day:")
-    for record in calendar.weather_info:
-        print(record)
-
-    max_temp = calendar.find_max_temperature("2023-11-03")
-    print(f"\nMax Temperature for 2023-10-25: {max_temp}°C")
-
-    prediction = calendar.is_lviv_weather(92, WeatherType.RAINY)
-    print("\nLviv Weather Prediction:", prediction)
-
-
 
 
             
